@@ -1,0 +1,11 @@
+flask_dev:
+  build: .
+  command: python ./excuseme/manage.py runserver
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/excusemeproject
+  links:
+    - mongodb
+mongodb:
+  image: mongo
